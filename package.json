@@ -31,7 +31,8 @@
       "node_modules/**/*"
     ],
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "src/assets/icons/transparent_icon.ico"
     },
     "mac": {
       "target": "dmg"
