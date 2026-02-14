@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>IM Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <h1 class="logo">IM<span class="logo-accent">Converter</span></h1>
+      </div>
+      <div class="header-right">
+        <button id="theme-toggle" class="icon-btn" title="Toggle dark mode">
+          <svg class="icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Left: Drop Zone + File List -->
+      <section class="panel panel-files">
+        <div id="drop-zone" class="drop-zone">
+          <svg class="drop-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M24 32V12M16 20l8-8 8 8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 32v4a4 4 0 004 4h24a4 4 0 004-4v-4" stroke-linecap="round"/>
+          </svg>
+          <p class="drop-text">Drop images here</p>
+          <p class="drop-subtext">or</p>
+          <button id="btn-select" class="btn btn-outline">Browse Files</button>
+        </div>
+
+        <div id="file-list-container" class="file-list-container hidden">
+          <div class="file-list-header">
+            <span id="file-count" class="file-count">0 files</span>
+            <button id="btn-add-more" class="btn btn-sm btn-outline">Add More</button>
+            <button id="btn-clear" class="btn btn-sm btn-ghost">Clear All</button>
+          </div>
+          <ul id="file-list" class="file-list"></ul>
+        </div>
+      </section>
+
+      <!-- Right: Settings + Actions -->
+      <section class="panel panel-settings">
+        <div class="settings-group">
+          <label class="label">Output Format</label>
+          <select id="format-select" class="select">
+            <option value="">Loading formats...</option>
+          </select>
+        </div>
+
+        <div class="settings-group">
+          <label class="label">Quality</label>
+          <div class="slider-row">
+            <input type="range" id="quality-slider" class="slider" min="1" max="100" value="90">
+            <span id="quality-value" class="slider-value">90%</span>
+          </div>
+          <p id="quality-hint" class="hint">Applies to JPG, WebP, and AVIF</p>
+        </div>
+
+        <div class="settings-group">
+          <label class="label">Resize (optional)</label>
+          <div class="resize-row">
+            <input type="number" id="resize-width" class="input input-sm" placeholder="Width" min="1">
+            <span class="resize-x">&times;</span>
+            <input type="number" id="resize-height" class="input input-sm" placeholder="Height" min="1">
+            <span class="hint">px</span>
+          </div>
+          <p class="hint">Keeps aspect ratio, won't upscale</p>
+        </div>
+
+        <div class="settings-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="keep-metadata">
+            <span>Preserve image metadata (EXIF)</span>
+          </label>
+        </div>
+
+        <div class="settings-group">
+          <label class="label">Output Folder</label>
+          <div class="folder-row">
+            <span id="output-folder-display" class="folder-display">Same as source</span>
+            <button id="btn-output-folder" class="btn btn-sm btn-outline">Change</button>
+            <button id="btn-reset-folder" class="btn btn-sm btn-ghost hidden">Reset</button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="btn-convert" class="btn btn-primary" disabled>Convert</button>
+        </div>
+
+        <!-- Progress -->
+        <div id="progress-section" class="progress-section hidden">
+          <div class="progress-bar-track">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
+          <p id="progress-text" class="progress-text">Converting...</p>
+        </div>
+
+        <!-- Results -->
+        <div id="results-section" class="results-section hidden">
+          <div id="results-summary" class="results-summary"></div>
+          <button id="btn-open-folder" class="btn btn-outline btn-sm">Open Output Folder</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
