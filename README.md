@@ -1,6 +1,17 @@
-# IM Converter
+<div align="center">
+  <img src="src/assets/icons/app_icon_256.png" alt="IM Converter logo" width="112" height="112">
 
-A clean, cross-platform desktop image converter built with Electron. Fast and reliable format conversion with minimal friction.
+  # IM Converter
+
+  A clean, cross-platform desktop image converter built with Electron. Fast and reliable format conversion with minimal friction.
+
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+  [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](#getting-started)
+</div>
+
+## About
+
+IM Converter is a lightweight desktop app for converting images between common formats without uploading files anywhere. Drop in a batch of photos, pick an output format, and get results in seconds — all processing happens locally on your machine, including HEIC/HEIF files straight from an iPhone.
 
 ## Features
 
@@ -65,4 +76,4 @@ Installers are output to the `dist/` folder.
 
 ## License
 
-MIT
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
