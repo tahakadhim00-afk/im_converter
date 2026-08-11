@@ -10,7 +10,7 @@
     "build:mac": "electron-builder --mac",
     "build:linux": "electron-builder --linux"
   },
-  "author": "",
+  "author": "Taha Kadhim",
   "license": "MIT",
   "devDependencies": {
     "electron": "^33.0.0",
@@ -32,7 +32,7 @@
     ],
     "win": {
       "target": "nsis",
-      "icon": "src/assets/icons/transparent_icon.ico"
+      "icon": "src/assets/icons/app_icon_256.png"
     },
     "mac": {
       "target": "dmg"

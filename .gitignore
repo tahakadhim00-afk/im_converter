@@ -2,5 +2,25 @@ node_modules/
 dist/
 *.log
 
+# IDE / editor
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Claude local settings
+.claude/
+
+# Build output
+C:/im_converter_build/
+
+# Source design files
+*.ai
+*.psd
+*.sketch
+
+
 # Ignore vscode AI rules
 .github/instructions/codacy.instructions.md

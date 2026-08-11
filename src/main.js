@@ -15,7 +15,7 @@ function createWindow() {
       contextIsolation: true,
       nodeIntegration: false,
     },
-    icon: path.join(__dirname, 'assets', 'icons', 'transparent_icon.ico'),
+    icon: path.join(__dirname, 'assets', 'icons', 'app_icon.ico'),
     title: 'IM Converter',
     autoHideMenuBar: true,
   });
